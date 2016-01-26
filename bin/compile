@@ -4,6 +4,7 @@
 
 echo "-----> Generating new cache_buster value in file $1/cache_buster..."
 cache_buster_value=$(date | md5sum)
-echo ${cache_buster_value:0:32} > $1/cache_buster
+echo $cache_buster_value
+echo ${cache_buster_value:0:32}
 
 exit 0
