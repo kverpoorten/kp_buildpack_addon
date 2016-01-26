@@ -2,7 +2,7 @@
 
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
-echo "-----> Generating new cache_buster value..."
+echo "-----> Generating new cache_buster value in file $1/cache_buster..."
 date | md5sum > $1/cache_buster
 
 exit 0
