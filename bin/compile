@@ -4,6 +4,6 @@
 
 echo "-----> Generating new cache_buster value in file $1/cache_buster..."
 cache_buster_value=$(date | md5sum | cut -c 1-32)
-echo $cache_buster_value > $1/cache_buster
+echo -n $cache_buster_value > $1/cache_buster
 
 exit 0
