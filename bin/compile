@@ -6,4 +6,8 @@ echo "-----> Generating new cache_buster value in file $1/cache_buster..."
 cache_buster_value=$(date | md5sum | cut -c 1-32)
 echo -n $cache_buster_value > $1/cache_buster
 
+echo "-----> Adding custom Apache Settings"
+echo "ServerSignature Off" >> /app/vendor/heroku/heroku-buildpack-php/conf/apache2/heroku.conf
+echo "ServerTokens Prod" >> /app/vendor/heroku/heroku-buildpack-php/conf/apache2/heroku.conf
+
 exit 0
